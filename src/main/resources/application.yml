@@ -9,3 +9,9 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
   instance:
     preferIpAddress: true
+
+#axon:
+#  distributed:
+#    enabled: true
+#    jgroups:
+#      bid-addr: 127.0.0.1
