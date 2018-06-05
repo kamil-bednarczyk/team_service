@@ -9,7 +9,11 @@ eureka:
       defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
   instance:
     preferIpAddress: true
-
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: SquadAgenda
 #axon:
 #  distributed:
 #    enabled: true
