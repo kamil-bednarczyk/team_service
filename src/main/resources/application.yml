@@ -13,9 +13,22 @@ eureka:
     mongodb:
       host: localhost
       port: 27017
-      database: SquadAgenda
+      database: squadagenda
 #axon:
 #  distributed:
 #    enabled: true
 #    jgroups:
 #      bid-addr: 127.0.0.1
+axon:
+  amqp:
+    exchange: events
+  #eventhandling:
+    #processors:
+      #newevents:
+        #source: events
+
+logging:
+  level:
+    org:
+      springframework:
+        data: debug

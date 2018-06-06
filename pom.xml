@@ -25,20 +25,34 @@
 	</properties>
 
 	<dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.axonframework/axon-mongo -->
+		<dependency>
+			<groupId>org.axonframework</groupId>
+			<artifactId>axon-mongo</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
         <!-- https://mvnrepository.com/artifact/org.axonframework/axon-core -->
         <dependency>
             <groupId>org.axonframework</groupId>
             <artifactId>axon-core</artifactId>
             <version>3.2.2</version>
         </dependency>
-<!--
-        <dependency>
-            <groupId>org.axonframework</groupId>
-            <artifactId>axon-spring-boot-starter-jgroups</artifactId>
-            <version>3.2.2</version>
-        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/org.axonframework/axon-spring-boot-starter -->
+		<!-- https://mvnrepository.com/artifact/org.axonframework/axon-amqp -->
+		<dependency>
+			<groupId>org.axonframework</groupId>
+			<artifactId>axon-amqp</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.axonframework/axon-spring-boot-starter -->
 		<dependency>
 			<groupId>org.axonframework</groupId>
 			<artifactId>axon-spring-boot-starter</artifactId>
@@ -52,17 +66,6 @@
 			<artifactId>axon-spring-boot-autoconfigure</artifactId>
 			<version>3.2.2</version>
 		</dependency>
-<!--        &lt;!&ndash;embedded mongo db &ndash;&gt;
-		<dependency>
-			<groupId>de.flapdoodle.embed</groupId>
-			<artifactId>de.flapdoodle.embed.mongo</artifactId>
-			<version>1.50.5</version>
-		</dependency>
-		<dependency>
-			<groupId>cz.jirutka.spring</groupId>
-			<artifactId>embedmongo-spring</artifactId>
-			<version>RELEASE</version>
-		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
