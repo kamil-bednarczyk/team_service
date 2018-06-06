@@ -48,12 +48,4 @@ public class RabbitMQConfig {
             }
         };
     }
-/*    @Bean
-    public SpringAMQPPublisher springAMQPPublisher(){
-        SpringAMQPPublisher publisher = new SpringAMQPPublisher(eventStore);
-        publisher.setDurable(true);
-        publisher.start();
-        publisher.setExchange(exchange());
-        return publisher;
-    }*/
 }

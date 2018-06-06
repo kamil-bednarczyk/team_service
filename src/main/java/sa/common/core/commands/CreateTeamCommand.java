@@ -8,6 +8,7 @@ public class CreateTeamCommand {
 
     @TargetAggregateIdentifier
     private String teamId;
+
     private String name;
     private String description;
 }

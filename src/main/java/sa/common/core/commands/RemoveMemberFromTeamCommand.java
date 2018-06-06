@@ -8,6 +8,7 @@ public class RemoveMemberFromTeamCommand {
 
     @TargetAggregateIdentifier
     private String teamId;
+
     private String memberId;
     private String memberName;
 }
