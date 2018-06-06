@@ -25,41 +25,34 @@
 	</properties>
 
 	<dependencies>
-
 		<!-- https://mvnrepository.com/artifact/org.axonframework/axon-mongo -->
 		<dependency>
 			<groupId>org.axonframework</groupId>
 			<artifactId>axon-mongo</artifactId>
 			<version>3.2.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
-
         <!-- https://mvnrepository.com/artifact/org.axonframework/axon-core -->
         <dependency>
             <groupId>org.axonframework</groupId>
             <artifactId>axon-core</artifactId>
             <version>3.2.2</version>
         </dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.axonframework/axon-amqp -->
 		<dependency>
 			<groupId>org.axonframework</groupId>
 			<artifactId>axon-amqp</artifactId>
 			<version>3.2.2</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.axonframework/axon-spring-boot-starter -->
 		<dependency>
 			<groupId>org.axonframework</groupId>
 			<artifactId>axon-spring-boot-starter</artifactId>
 			<version>3.2.2</version>
 		</dependency>
-
-
 		<!-- https://mvnrepository.com/artifact/org.axonframework/axon-spring-boot-autoconfigure -->
 		<dependency>
 			<groupId>org.axonframework</groupId>

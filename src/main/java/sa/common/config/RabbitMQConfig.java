@@ -1,12 +1,17 @@
 package sa.common.config;
 
-import org.axonframework.amqp.eventhandling.spring.SpringAMQPPublisher;
-import org.axonframework.eventsourcing.eventstore.EventStore;
+import com.rabbitmq.client.Channel;
+import lombok.extern.log4j.Log4j2;
+import org.axonframework.amqp.eventhandling.DefaultAMQPMessageConverter;
+import org.axonframework.amqp.eventhandling.spring.SpringAMQPMessageSource;
+import org.axonframework.serialization.Serializer;
 import org.springframework.amqp.core.*;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+@Log4j2
 @Configuration
 public class RabbitMQConfig {
 
@@ -32,6 +37,17 @@ public class RabbitMQConfig {
         admin.declareBinding(binding());
     }
 
+    @Bean
+    public SpringAMQPMessageSource newevents(Serializer serializer) {
+        return new SpringAMQPMessageSource(new DefaultAMQPMessageConverter(serializer)) {
+            @RabbitListener(queues = "events")
+            @Override
+            public void onMessage(Message message, Channel channel) throws Exception {
+                log.info("Received message: " + message.toString());
+                super.onMessage(message, channel);
+            }
+        };
+    }
 /*    @Bean
     public SpringAMQPPublisher springAMQPPublisher(){
         SpringAMQPPublisher publisher = new SpringAMQPPublisher(eventStore);

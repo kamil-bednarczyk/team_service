@@ -14,11 +14,7 @@ eureka:
       host: localhost
       port: 27017
       database: squadagenda
-#axon:
-#  distributed:
-#    enabled: true
-#    jgroups:
-#      bid-addr: 127.0.0.1
+
 axon:
   amqp:
     exchange: events

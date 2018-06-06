@@ -1,20 +1,21 @@
 package sa.common.config;
 
-import com.mongodb.reactivestreams.client.MongoClients;
+import com.mongodb.MongoClient;
+import org.axonframework.mongo.DefaultMongoTemplate;
+import org.axonframework.mongo.MongoTemplate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 
 @Configuration
 public class MongoConfig {
 
-/*    public @Bean
-    com.mongodb.reactivestreams.client.MongoClient reactiveMongoClient() {
-        return MongoClients.create("mongodb://localhost");
+    @Bean
+    public MongoClient mongoClient() {
+        return new MongoClient("localhost", 27017);
     }
 
-    public @Bean
-    ReactiveMongoTemplate reactiveMongoTemplate() {
-        return new ReactiveMongoTemplate(reactiveMongoClient(), "mydatabase");
-    }*/
+    @Bean
+    public MongoTemplate defaultMongoTemplate() {
+        return new DefaultMongoTemplate(mongoClient());
+    }
 }
