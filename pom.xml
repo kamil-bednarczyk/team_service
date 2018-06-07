@@ -90,11 +90,6 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongodb-driver-reactivestreams</artifactId>
-			<version>1.7.1</version>
-		</dependency>
 	</dependencies>
 
 	<dependencyManagement>

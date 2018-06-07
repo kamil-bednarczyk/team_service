@@ -38,10 +38,11 @@ public class RabbitMQConfig {
     }
 
     @Bean
-    public SpringAMQPMessageSource newevents(Serializer serializer) {
+    public SpringAMQPMessageSource springAMQPMessageSource(Serializer serializer) {
         return new SpringAMQPMessageSource(new DefaultAMQPMessageConverter(serializer)) {
-            @RabbitListener(queues = "events")
+
             @Override
+            @RabbitListener(queues = "events")
             public void onMessage(Message message, Channel channel) throws Exception {
                 log.info("Received message: " + message.toString());
                 super.onMessage(message, channel);

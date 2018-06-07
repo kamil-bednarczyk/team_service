@@ -23,9 +23,12 @@ public class TeamAggregate {
 
     private String name;
     private String description;
-
     private String memberId;
     private String memberName;
+
+    @SuppressWarnings("unused")
+    protected TeamAggregate() {
+    }
 
     @CommandHandler
     public TeamAggregate(CreateTeamCommand cmd) {
@@ -33,17 +36,17 @@ public class TeamAggregate {
     }
 
     @CommandHandler
-    public void on(AddMemberToTeamCommand cmd){
+    public void handle(AddMemberToTeamCommand cmd){
         apply(new MemberAddedToTeamEvent(cmd.getTeamId(), cmd.getMemberId(), cmd.getMemberName()));
     }
 
     @CommandHandler
-    public void on(RemoveMemberFromTeamCommand cmd){
+    public void handle(RemoveMemberFromTeamCommand cmd){
         apply(new MemberAddedToTeamEvent(cmd.getTeamId(), cmd.getMemberId(), cmd.getMemberName()));
     }
 
     @EventSourcingHandler
-    public void handle(TeamCreatedEvent event) {
+    public void on(TeamCreatedEvent event) {
         this.teamId = event.getTeamId();
         this.name = event.getName();
         this.description = event.getDescription();
