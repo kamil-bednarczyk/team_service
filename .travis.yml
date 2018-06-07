@@ -9,6 +9,7 @@ cache:
 
 before_install:
   - chmod +x mvnw
+
 #addons:
 #  sonarcloud:
 #    organization: "kamil-bednarczyk-github"
