@@ -25,6 +25,15 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security.oauth.boot</groupId>
+			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
+			<version>2.0.1.RELEASE</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.axonframework/axon-mongo -->
 		<dependency>
 			<groupId>org.axonframework</groupId>
@@ -35,7 +44,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
-        <!-- https://mvnrepository.com/artifact/org.axonframework/axon-core -->
+        <!-- https://mvnrepository.com/artifact/org.axonframework/axon-sa.common.core -->
         <dependency>
             <groupId>org.axonframework</groupId>
             <artifactId>axon-core</artifactId>
