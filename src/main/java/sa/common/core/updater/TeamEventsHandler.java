@@ -34,7 +34,7 @@ public class TeamEventsHandler {
     public void on(MemberAddedToTeamEvent event) {
         log.info("Received event: " + event.toString());
         teamRepository.findById(event.getTeamId()).ifPresent(team -> {
-            team.getMembers().add(new Member(event.getMemberId(), event.getMemberName()));
+            team.getMembers().add(new Member(event.getMemberName(), event.getMemberName()));
             teamRepository.save(team);
         });
     }
@@ -43,7 +43,7 @@ public class TeamEventsHandler {
     public void on(MemberRemovedFromTeamEvent event) {
         log.info("Received event: " + event.toString());
         teamRepository.findById(event.getTeamId()).ifPresent(team -> {
-            team.getMembers().removeIf(member -> member.getId().equals(event.getMemberId()));
+            team.getMembers().removeIf(member -> member.getName().equals(event.getMemberName()));
             teamRepository.save(team);
         });
     }

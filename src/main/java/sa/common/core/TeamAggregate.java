@@ -42,7 +42,7 @@ public class TeamAggregate {
 
     @CommandHandler
     public void handle(RemoveMemberFromTeamCommand cmd){
-        apply(new MemberAddedToTeamEvent(cmd.getTeamId(), cmd.getMemberId(), cmd.getMemberName()));
+        apply(new MemberRemovedFromTeamEvent(cmd.getTeamId(), cmd.getMemberId(), cmd.getMemberName()));
     }
 
     @EventSourcingHandler

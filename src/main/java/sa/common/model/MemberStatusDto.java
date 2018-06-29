@@ -12,4 +12,5 @@ public class MemberStatusDto {
 
     private String memberId;
     private String memberName;
+    private Status status;
 }
