@@ -20,6 +20,7 @@ public class WebSecurityConfiguration
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
+        http.cors().disable();
         http.authorizeRequests()
                 .antMatchers(HttpMethod.GET).access(READ_SCOPE)
                 .antMatchers(HttpMethod.GET).access(WRITE_SCOPE)

@@ -26,7 +26,8 @@ public class TeamController {
 
     @PostMapping
     public ResponseEntity createTeam(@RequestBody @Valid CreateTeamDto dto) {
-        commandGateway.send(new CreateTeamCommand(UUID.randomUUID().toString(), dto.getName(), dto.getDescription()));
+        commandGateway.send(new CreateTeamCommand(UUID.randomUUID().toString(),
+                dto.getName(), dto.getDescription(), dto.getOwnerName()));
         return ResponseEntity.ok().build();
     }
 

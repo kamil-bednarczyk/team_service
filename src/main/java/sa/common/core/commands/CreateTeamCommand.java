@@ -11,4 +11,5 @@ public class CreateTeamCommand {
 
     private String name;
     private String description;
+    private String ownerName;
 }

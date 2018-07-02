@@ -8,4 +8,5 @@ public class TeamCreatedEvent {
     String teamId;
     String name;
     String description;
+    String onwerName;
 }

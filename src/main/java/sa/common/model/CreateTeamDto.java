@@ -15,4 +15,6 @@ public class CreateTeamDto {
     @NotEmpty
     private String name;
     private String description;
+    @NotEmpty
+    private String ownerName;
 }

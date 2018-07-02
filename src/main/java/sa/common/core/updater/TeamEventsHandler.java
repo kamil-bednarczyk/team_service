@@ -27,7 +27,13 @@ public class TeamEventsHandler {
     @EventHandler
     public void on(TeamCreatedEvent event) {
         log.info("Received event: " + event.toString());
-        teamRepository.save(new Team(event.getTeamId(), event.getName(), event.getDescription(), new ArrayList<>()));
+        teamRepository.save(Team.builder()
+                .id(event.getTeamId())
+                .name(event.getName())
+                .ownerName(event.getOnwerName())
+                .description(event.getDescription())
+                .members(new ArrayList<>())
+                .build());
     }
 
     @EventHandler
