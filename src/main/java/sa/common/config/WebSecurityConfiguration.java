@@ -11,12 +11,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @Component
-public class WebSecurityConfiguration
-        extends ResourceServerConfigurerAdapter
-{
-
-    private final static String WRITE_SCOPE = "#oauth2.hasScope('write')";
-    private final static String READ_SCOPE = "#oauth2.hasScope('read')";
+public class WebSecurityConfiguration extends ResourceServerConfigurerAdapter {
+    private static final String WRITE_SCOPE = "#oauth2.hasScope('write')";
+    private static final String READ_SCOPE = "#oauth2.hasScope('read')";
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
@@ -42,5 +39,4 @@ public class WebSecurityConfiguration
         bean.setOrder(0);
         return bean;
     }
-
 }

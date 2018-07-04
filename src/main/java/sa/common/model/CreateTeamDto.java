@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 
 @AllArgsConstructor
@@ -17,4 +18,5 @@ public class CreateTeamDto {
     private String description;
     @NotEmpty
     private String ownerName;
+    private List<Member> members;
 }

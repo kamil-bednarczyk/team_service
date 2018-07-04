@@ -13,6 +13,11 @@ import sa.common.core.events.MemberAddedToTeamEvent;
 import sa.common.core.events.MemberRemovedFromTeamEvent;
 import sa.common.core.events.TeamCreatedEvent;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import static org.axonframework.commandhandling.model.AggregateLifecycle.apply;
 
 @Aggregate
@@ -23,8 +28,7 @@ public class TeamAggregate {
 
     private String name;
     private String description;
-    private String memberId;
-    private String memberName;
+    private Set<String> members;
     private String ownerName;
 
     @SuppressWarnings("unused")
@@ -33,7 +37,7 @@ public class TeamAggregate {
 
     @CommandHandler
     public TeamAggregate(CreateTeamCommand cmd) {
-        apply(new TeamCreatedEvent(cmd.getTeamId(), cmd.getName(), cmd.getDescription(), cmd.getOwnerName()));
+        apply(new TeamCreatedEvent(cmd.getTeamId(), cmd.getName(), cmd.getDescription(), cmd.getOwnerName(), cmd.getMembers()));
     }
 
     @CommandHandler
@@ -50,21 +54,20 @@ public class TeamAggregate {
     public void on(TeamCreatedEvent event) {
         this.teamId = event.getTeamId();
         this.name = event.getName();
-        this.ownerName = event.getOnwerName();
+        this.ownerName = event.getOwnerName();
         this.description = event.getDescription();
+        this.members = new HashSet<>(event.getMembers());
     }
 
     @EventHandler
     public void on(MemberAddedToTeamEvent event) {
         this.teamId = event.getTeamId();
-        this.memberId = event.getMemberId();
-        this.memberName = event.getMemberName();
+        this.members.add(event.getMemberName());
     }
 
     @EventHandler
     public void on(MemberRemovedFromTeamEvent event) {
         this.teamId = event.getTeamId();
-        this.memberId = null;
-        this.memberName = null;
+        this.members.removeIf( name -> name.equals(event.getMemberName()));
     }
 }

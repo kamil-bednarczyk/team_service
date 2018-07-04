@@ -3,6 +3,8 @@ package sa.common.core.commands;
 import lombok.Value;
 import org.axonframework.commandhandling.TargetAggregateIdentifier;
 
+import java.util.List;
+
 @Value
 public class CreateTeamCommand {
 
@@ -12,4 +14,5 @@ public class CreateTeamCommand {
     private String name;
     private String description;
     private String ownerName;
+    private List<String> members;
 }

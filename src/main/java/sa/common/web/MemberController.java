@@ -11,7 +11,6 @@ import sa.common.core.commands.AddMemberToTeamCommand;
 import sa.common.core.commands.RemoveMemberFromTeamCommand;
 import sa.common.model.MemberStatusDto;
 import sa.common.model.Status;
-import sa.common.repository.TeamRepository;
 
 import javax.validation.Valid;
 
@@ -28,7 +27,7 @@ public class MemberController {
         log.info(dto.toString());
         if (dto.getStatus().equals(Status.ADD)) {
             commandGateway.send(new AddMemberToTeamCommand(dto.getTeamId(), dto.getMemberId(), dto.getMemberName()));
-        } else if(dto.getStatus().equals(Status.REMOVE)) {
+        } else if (dto.getStatus().equals(Status.REMOVE)) {
             commandGateway.send(new RemoveMemberFromTeamCommand(dto.getTeamId(), dto.getMemberId(), dto.getMemberName()));
         }
     }
