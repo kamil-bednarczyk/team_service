@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sa.common.core.commands.AddMemberToTeamCommand;
-import sa.common.core.commands.RemoveMemberFromTeamCommand;
+import sa.common.axon.commands.AddMemberToTeamCommand;
+import sa.common.axon.commands.RemoveMemberFromTeamCommand;
 import sa.common.model.MemberStatusDto;
 import sa.common.model.Status;
 

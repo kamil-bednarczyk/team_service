@@ -1,4 +1,4 @@
-package sa.common.core.commands;
+package sa.common.axon.commands;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +8,7 @@ import org.axonframework.commandhandling.TargetAggregateIdentifier;
 @Value
 @Builder
 @AllArgsConstructor
-public class RemoveMemberFromTeamCommand {
+public class AddMemberToTeamCommand {
 
     @TargetAggregateIdentifier
     private String teamId;

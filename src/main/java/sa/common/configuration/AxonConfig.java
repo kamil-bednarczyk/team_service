@@ -1,4 +1,4 @@
-package sa.common.config;
+package sa.common.configuration;
 
 import lombok.extern.log4j.Log4j2;
 import org.axonframework.eventsourcing.eventstore.EmbeddedEventStore;

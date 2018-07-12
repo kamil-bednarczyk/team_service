@@ -4,9 +4,9 @@ import org.axonframework.test.saga.FixtureConfiguration;
 import org.axonframework.test.saga.SagaTestFixture;
 import org.junit.Before;
 import org.junit.Test;
-import sa.common.core.commands.AddMemberToTeamCommand;
-import sa.common.core.events.TeamCreatedEvent;
-import sa.common.core.saga.AddMembersToNewTeamSaga;
+import sa.common.axon.commands.AddMemberToTeamCommand;
+import sa.common.axon.events.TeamCreatedEvent;
+import sa.common.axon.saga.AddMembersToNewTeamSaga;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package sa.common.config;
+package sa.common.configuration;
 
 import com.mongodb.MongoClient;
 import org.axonframework.mongo.DefaultMongoTemplate;

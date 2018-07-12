@@ -4,7 +4,7 @@ import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sa.common.core.commands.CreateTeamCommand;
+import sa.common.axon.commands.CreateTeamCommand;
 import sa.common.model.CreateTeamDto;
 import sa.common.model.Member;
 import sa.common.model.Team;

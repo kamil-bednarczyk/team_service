@@ -1,4 +1,4 @@
-package sa.common.core.events;
+package sa.common.axon.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

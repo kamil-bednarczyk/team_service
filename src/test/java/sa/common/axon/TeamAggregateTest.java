@@ -4,17 +4,14 @@ import org.axonframework.test.aggregate.AggregateTestFixture;
 import org.axonframework.test.aggregate.FixtureConfiguration;
 import org.junit.Before;
 import org.junit.Test;
-import sa.common.core.TeamAggregate;
-import sa.common.core.commands.AddMemberToTeamCommand;
-import sa.common.core.commands.CreateTeamCommand;
-import sa.common.core.commands.RemoveMemberFromTeamCommand;
-import sa.common.core.events.MemberAddedToTeamEvent;
-import sa.common.core.events.MemberRemovedFromTeamEvent;
-import sa.common.core.events.TeamCreatedEvent;
-import sa.common.model.Member;
+import sa.common.axon.commands.AddMemberToTeamCommand;
+import sa.common.axon.commands.CreateTeamCommand;
+import sa.common.axon.commands.RemoveMemberFromTeamCommand;
+import sa.common.axon.events.MemberAddedToTeamEvent;
+import sa.common.axon.events.MemberRemovedFromTeamEvent;
+import sa.common.axon.events.TeamCreatedEvent;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class TeamAggregateTest {

@@ -1,4 +1,4 @@
-package sa.common.config;
+package sa.common.configuration;
 
 import com.rabbitmq.client.Channel;
 import lombok.extern.log4j.Log4j2;

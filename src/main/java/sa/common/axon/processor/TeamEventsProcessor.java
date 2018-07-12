@@ -1,11 +1,11 @@
-package sa.common.core.processor;
+package sa.common.axon.processor;
 
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import sa.common.core.events.MemberAddedToTeamEvent;
-import sa.common.core.events.MemberRemovedFromTeamEvent;
-import sa.common.core.events.TeamCreatedEvent;
+import sa.common.axon.events.MemberAddedToTeamEvent;
+import sa.common.axon.events.MemberRemovedFromTeamEvent;
+import sa.common.axon.events.TeamCreatedEvent;
 import sa.common.model.Member;
 import sa.common.model.Team;
 import sa.common.repository.TeamRepository;
