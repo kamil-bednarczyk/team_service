@@ -1,25 +1,40 @@
 package sa.common.configuration;
 
-import lombok.extern.log4j.Log4j2;
+import com.mongodb.MongoClient;
 import org.axonframework.eventsourcing.eventstore.EmbeddedEventStore;
 import org.axonframework.eventsourcing.eventstore.EventStorageEngine;
 import org.axonframework.eventsourcing.eventstore.EventStore;
+import org.axonframework.mongo.DefaultMongoTemplate;
 import org.axonframework.mongo.MongoTemplate;
 import org.axonframework.mongo.eventsourcing.eventstore.MongoEventStorageEngine;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@Log4j2
 public class AxonConfig {
 
-    @Autowired
-    private MongoTemplate mongoTemplate;
+    private final String host;
+    private final Integer port;
+
+    public AxonConfig(@Value("${spring.data.mongodb.host}") String host, @Value("${spring.data.mongodb.port}") Integer port) {
+        this.host = host;
+        this.port = port;
+    }
+
+    @Bean
+    public MongoClient mongoClient() {
+        return new MongoClient(host, port);
+    }
+
+    @Bean
+    public MongoTemplate defaultMongoTemplate() {
+        return new DefaultMongoTemplate(mongoClient());
+    }
 
     @Bean
     public EventStorageEngine eventStorageEngine() {
-        return new MongoEventStorageEngine(mongoTemplate);
+        return new MongoEventStorageEngine(defaultMongoTemplate());
     }
 
     @Bean
