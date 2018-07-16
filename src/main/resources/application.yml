@@ -16,9 +16,9 @@ eureka:
   instance:
     preferIpAddress: true
 
-axon:
-  amqp:
-    exchange: events
+#axon:
+#  amqp:
+#    exchange: events
 
 security:
  oauth2:
