@@ -13,8 +13,7 @@ public class MongoConfig {
     private final String host;
     private final Integer port;
 
-    public MongoConfig(@Value("${spring.data.mongodb.host}") String host,
-                       @Value("${spring.data.mongodb.port}") Integer port) {
+    public MongoConfig(@Value("${spring.data.mongodb.host}") String host, @Value("${spring.data.mongodb.port}") Integer port) {
         this.host = host;
         this.port = port;
     }
