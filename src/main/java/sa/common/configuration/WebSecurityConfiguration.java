@@ -2,6 +2,7 @@ package sa.common.configuration;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
@@ -10,7 +11,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-@Component
+@Configuration
 public class WebSecurityConfiguration extends ResourceServerConfigurerAdapter {
     private static final String WRITE_SCOPE = "#oauth2.hasScope('write')";
     private static final String READ_SCOPE = "#oauth2.hasScope('read')";
